@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dfdfdf;
+}
+
+/* Contenedor general idéntico al form */
+.form-box {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow-wrap: break-word;  
+    word-break: break-word;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Encabezado del formulario */
+.form-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.form-header header {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.05);
+    outline: none;
+    transition: .3s;
+    display: block;
+    box-sizing: border-box;
+}
+
+/* Ajuste especial para textarea para que tenga más altura */
+textarea {
+    height: 100px;
+    padding-top: 15px;
+    resize: vertical;
+}
+
+/* Inputs al enfocar */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+    width: 105%;
+}
+
+/* Placeholder */
+::placeholder {
+    font-weight: 500;
+    color: #222;
+}
+
+/* Botón de enviar igual que en form */
+.input-submit {
+    position: relative;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    background: #444;
+}
+
+/* Enlaces dentro del formulario */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}

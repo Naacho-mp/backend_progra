@@ -1,0 +1,8 @@
+#Ignorar Entorno Virtual venv
+/venv
+__pycache__/
+*.pyc
+*.pyo
+
+#Ignorar Credenciales de Base de Datos
+.env

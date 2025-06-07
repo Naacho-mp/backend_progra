@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Actualizar Producto</title>
+    <link rel="stylesheet" href="{% static 'css/styleAgregarProducto.css' %}"> 
+</head>
+<body>
+{% if user.is_authenticated %}
+    <div class="form-box">
+        <div class="form-header">
+            <header>Actualizar Producto</header>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% if producto_form.instance.imagen %}
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="{{ producto_form.instance.imagen.url }}" width="150">
+                </div>
+            {% endif %}
+
+            <div>
+                {{ producto_form.as_p }}
+            </div>
+
+            <div class="input-submit">
+                <button type="submit" class="submit-btn">Actualizar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Alertas errores -->
+    {% if messages %}
+        {% for message in messages %}
+        <script>
+            alert("{{ message|escapejs }}");
+        </script>
+        {% endfor %}
+    {% endif %}
+
+{% else %}
+    <p style="text-align: center; margin-top: 50px;">
+        Usted no ha iniciado sesión.
+        <br />
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+    </p>
+{% endif %}
+</body>
+</html>

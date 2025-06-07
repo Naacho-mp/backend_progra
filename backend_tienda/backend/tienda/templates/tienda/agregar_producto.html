@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="{% static 'css/styleAgregarProducto.css' %}"> 
+</head>
+<body>
+{% if user.is_authenticated %}
+    <div class="form-box">
+        <div class="form-header">
+            <header>Agregar Producto</header>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                {{ producto_form.as_p }}
+            </div>
+
+            <div class="input-submit">
+                <button type="submit" class="submit-btn">Agregar</button>
+            </div>
+        </form>
+    </div>
+    
+<!-- Alertas excepciones -->
+    {% if messages %}
+    
+        {% for message in messages %}
+        <script>
+            alert("{{ message|escapejs }}");
+        </script>
+        {% endfor %}
+    
+    {% endif %}
+
+
+{% else %}
+    <p style="text-align: center; margin-top: 50px;">
+        Usted no ha iniciado Sesión
+        <br />
+        <a href="{% url 'login' %}">Iniciar Sesión</a>
+    </p>
+{% endif %}
+</body>
+</html>

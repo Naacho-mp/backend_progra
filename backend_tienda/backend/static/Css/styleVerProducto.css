@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.img-producto {
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.border {
+    background-color: #fff;
+    border: none !important;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #444;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+input[type="number"] {
+    border-radius: 8px;
+    height: 45px;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #222;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #000;
+}
+
+.btn-outline-secondary {
+    border-radius: 30px;
+    padding: 6px 20px;
+    font-weight: 500;
+}
+
+.logo-text {
+    font-size: 26px;
+    line-height: 1.1;
+    margin-left: 10px;
+}
+
+.text-center.display-5 {
+    font-size: 26px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-success img {
+    transition: transform 0.2s ease;
+}
+
+.btn-success:hover img {
+    transform: scale(1.1);
+}

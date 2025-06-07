@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Categoria</title>
+</head>
+{% if user.is_authenticated %}
+    <body>
+        <h1>Actualizar Categoria</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <table>
+                {{categoria_form}}
+            </table>
+            <button type="submit">Enviar</button>
+            {% csrf_token %}
+        </form>    
+    </body>
+{% else %}
+        <p>
+            Usted no ha iniciado Sesión
+            </br>
+            <a href = "{% url 'login' %}">Iniciar Sesión</a>
+        </p>
+
+    {% endif %}
+</html>

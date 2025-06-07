@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+{% if user.is_authenticated %}
+
+    <body class="container mt-5">
+    <div class="text-center display-5">Technology Company
+        {% load static %}
+        <img src="{% static 'imagenes/logo.jpeg' %}" height="80" alt="Logo">
+    </div>
+    {% if user.is_authenticated %}
+        <h2 class="mt-4 mb-3">Carrito de Compras de <strong>{{user.username|upper}}</strong></h2>
+    {% else %}
+    
+        <h2 class="mt-4 mb-3">Carrito de Compras </h2>
+
+    {% endif %}
+
+    {% if carrito %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Quitar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carrito %}
+                    <tr>
+                        <td>{{ item.producto.nombre }}</td>
+                        <td>${{ item.producto.precio }}</td>
+                        <td>{{ item.cantidad }}</td>
+                        <td>${{ item.subtotal }}</td>
+                        <td>
+                            <form method="post" action="{% url 'eliminar_del_carrito' item.producto.id %}">
+                                {% csrf_token %}
+                                <button class="btn btn-danger btn-sm">Quitar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-end gap-2 mt-4">
+            <button class="btn btn-outline-dark" disabled>Total: ${{ total }}</button>
+        </div>
+    {% else %}
+        <div class="alert alert-info">Tu carrito está vacío.</div>
+    {% endif %}
+
+    <a href="{% url 'mostrar_productos' %}" class="btn btn-secondary mt-3">Seguir comprando</a>
+    <a href="{% url 'pagado' %}" class="btn btn-secondary mt-3">Proceder al pago</a>
+</body>
+{% else %}
+    <div class="alert alert-warning">Debes iniciar sesión para ver tu carrito.</div>
+    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+{% endif %}
+</html>

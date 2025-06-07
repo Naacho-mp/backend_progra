@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-header">
+            <header>Iniciar Sesión</header>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="input-submit">
+                <button type="submit" class="submit-btn" id="submit"></button>
+                <label for="submit">Ingresar</label>
+            </div>
+
+            <div class="sign-up-link">
+                <p>¿No tienes cuenta? <a href="{% url 'agregar_usuario' %}">Regístrate</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Categorias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+{% if user.is_authenticated %}
+    <body class="container mt-5">
+        <div class="text-center display-5">Technology Company
+            {% load static %}
+        <img src="{% static 'imagenes/logo.jpeg' %}" height="80" alt="Logo">
+        </div>
+        
+        <div>
+            <a href="../agregar_categoria" class="btn btn-sm btn-success mb-3">Agregar Categoria ✚</a>
+            <a href = "../mostrar_productos" class="btn btn-sm btn-success mb-3">Ver Productos 🔍 </a>
+        </div>
+            {% if categorias %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in categorias %}
+                        <!-- templates/categoria/mostrar_categorias.html -->
+                        {% include "tienda/mostrar_productos.html" with categorias=categorias %}
+
+                            <tr>
+                                <td scope = 'row'>{{p.id}}</td>
+                                <td>{{p.nombre}}</td>
+                                <td>{{p.descripcion}}</td>
+                                <td>                            
+                                    <a href="{% url 'actualizar_categoria' p.id %}" class="btn btn-warning">Editar</a>
+                                
+                                    <a href="{% url 'eliminar_categoria' p.id %}" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-info">No hay Registros</div>
+            {% endif %}
+        
+    </body>
+{% else %}
+        <p>
+            Usted no ha iniciado Sesión
+            </br>
+            <a href = "{% url 'login' %}">Iniciar Sesión</a>
+        </p>
+
+    {% endif %}
+</html>
