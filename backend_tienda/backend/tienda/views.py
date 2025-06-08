@@ -47,6 +47,11 @@ def agregar_producto(request):
         producto_form = ProductoForm(request.POST, request.FILES)
 
         if producto_form.is_valid():
+            imagen = request.FILES.get('imagen')
+            if imagen and imagen.content_type not in ['image/jpeg', 'image/png']:
+                messages.error(request, "Error: Solo se permiten imágenes JPEG o PNG.")
+                return render(request, 'tienda/actualizar_producto.html', {'producto_form': producto_form})
+
             precio = producto_form.cleaned_data.get('precio')
             stock = producto_form.cleaned_data.get('stock')
 
@@ -72,6 +77,11 @@ def actualizar_producto(request, producto_id):
         producto_form = ProductoForm(request.POST, request.FILES, instance=producto)
 
         if producto_form.is_valid():
+            imagen = request.FILES.get('imagen')
+            if imagen and imagen.content_type not in ['image/jpeg', 'image/png']:
+                messages.error(request, "Error: Solo se permiten imágenes JPEG o PNG.")
+                return render(request, 'tienda/actualizar_producto.html', {'producto_form': producto_form})
+
             precio = producto_form.cleaned_data.get('precio')
             stock = producto_form.cleaned_data.get('stock')
 
