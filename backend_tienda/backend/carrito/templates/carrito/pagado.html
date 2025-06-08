@@ -22,16 +22,16 @@
         </div>
 
         <div class="text-center my-4">
-            <img src="{% static 'imagenes/comprado.png' %}" height="200" alt="Compra realizada">
+            <img src="{% static 'imagenes/logo_compra2.png' %}" height="200" alt="Compra realizada">
         </div>
 
         <div class="text-center">
-            <h1 class="fw-bold">Su compra</h1>
-            <h4 class="text-muted">ha sido realizada con éxito.</h4>
-            <p class="mt-3">Gracias por su compra, su pedido ha sido procesado.</p>
+            <h1 class="fw-bold">!Gracias por tu Compra!</h1>
+            <h4 class="text-muted">Tu solicitud de compra, ha sido recibida</h4>
+            <p class="mt-3">A continuación puedes descargar tu boleta en PDF</p>
         </div>
         <div class="text-center mt-4">
-            <a href="{% url 'mostrar_productos' %}" class="btn btn-secondary"> < volver a comprar</a>
+            <a href="{% url 'mostrar_productos' %}" class="btn btn-secondary"> < Volver a Comprar</a>
             <a href="{% url 'generar_boleta_productos' %}" class="btn btn-primary">Descargar Boleta</a>
         </div>
     </body>
