@@ -37,6 +37,8 @@ urlpatterns += [
     path('agregar_producto/', agregar_producto, name='agregar_producto'),
     path('actualizar_producto/<int:producto_id>/', actualizar_producto, name='actualizar_producto'),
     path('eliminar_producto/<int:producto_id>/', eliminar_producto, name='eliminar_producto'),
+    path('productos/categoria/<int:categoria_id>/', productos_por_categoria, name='productos_por_categoria'),
+    
     ]
 
 urlpatterns += [    
@@ -45,6 +47,7 @@ urlpatterns += [
     path('ver_carrito/', ver_carrito, name='ver_carrito'),
     path('eliminar_del_carrito/<int:producto_id>/', eliminar_del_carrito, name='eliminar_del_carrito'),
     path('pagado/', pagado, name='pagado'),
+    path('boleta-productos/', boleta, name='generar_boleta_productos'),
     ]
 
 

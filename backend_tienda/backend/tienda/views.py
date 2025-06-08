@@ -95,6 +95,16 @@ def eliminar_producto(request, producto_id):
     producto.delete()
     return redirect('mostrar_productos')
 
+def productos_por_categoria(request, categoria_id):
+    categoria = get_object_or_404(Categoria, id=categoria_id)
+    productos = Producto.objects.filter(categoria=categoria)
+
+    return render(request, 'tienda/productos_filtrados.html', {
+        'categoria': categoria,
+        'productos': productos
+    })
+
+
 
 
 

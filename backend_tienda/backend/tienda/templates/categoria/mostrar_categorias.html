@@ -16,6 +16,7 @@
         <div>
             <a href="../agregar_categoria" class="btn btn-sm btn-success mb-3">Agregar Categoria ✚</a>
             <a href = "../mostrar_productos" class="btn btn-sm btn-success mb-3">Ver Productos 🔍 </a>
+
         </div>
             {% if categorias %}
                 <table class="table">
@@ -30,16 +31,15 @@
                     <tbody>
                         {% for p in categorias %}
                         <!-- templates/categoria/mostrar_categorias.html -->
-                        {% include "tienda/mostrar_productos.html" with categorias=categorias %}
-
+                        
                             <tr>
                                 <td scope = 'row'>{{p.id}}</td>
                                 <td>{{p.nombre}}</td>
                                 <td>{{p.descripcion}}</td>
                                 <td>                            
                                     <a href="{% url 'actualizar_categoria' p.id %}" class="btn btn-warning">Editar</a>
-                                
                                     <a href="{% url 'eliminar_categoria' p.id %}" class="btn btn-danger">Eliminar</a>
+                                    <a href="{% url 'productos_por_categoria' p.id %}"  class="btn btn-success">Ver</a>
                                 </td>
                             </tr>
                         {% endfor %}
