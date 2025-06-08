@@ -13,6 +13,6 @@
     - DB_PASSWORD = tu_pass
     - DB_HOST = localhost
     - DB_PORT = 3306
-4.- Hacer un python manage.py migrate
+4.- Hacer un "Python manage.py migrate"
 
 5.- Correr el Proyecto con "Python manage.py runserver"
