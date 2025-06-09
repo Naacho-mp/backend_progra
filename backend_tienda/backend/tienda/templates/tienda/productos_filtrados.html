@@ -38,8 +38,9 @@
         {% endfor %}
     {% endif %}
 
-    <h3 class="mb-4">Productos en la categoría: {{ categoria.nombre }}</h3>
-    <a href="{% url 'mostrar_categorias' %}" class="btn btn-secondary mb-3">← Volver a Categorías</a>
+   <div class="d-flex align-items-center mb-4">
+        <h3 class="mb-0">Productos en la categoría: {{ categoria.nombre }}</h3>
+    </div>
 
     {% if productos %}
         <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
