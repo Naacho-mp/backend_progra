@@ -1,0 +1,16 @@
+
+
+.card-title {
+    white-space: nowrap;      
+    overflow: hidden;          
+    text-overflow: ellipsis;   
+}
+
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}

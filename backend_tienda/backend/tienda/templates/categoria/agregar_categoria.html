@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Categoria</title>
-    <link rel="stylesheet" href="{% static 'css/styleAgregarProducto.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/styleAgregarCategoria.css' %}"> 
 </head>
 {% if user.is_authenticated %}
     <body   class="container mt-4 ">
@@ -15,6 +15,7 @@
         </div>
 
         <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
             <table>
                 {{categoria_form}}
             </table>
