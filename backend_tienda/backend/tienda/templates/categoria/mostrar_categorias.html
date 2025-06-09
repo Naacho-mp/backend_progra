@@ -49,6 +49,18 @@
             {% endif %}
         
     </body>
+
+    <!-- Alertas excepciones -->
+    {% if messages %}
+    
+        {% for message in messages %}
+        <script>
+            alert("{{ message|escapejs }}");
+        </script>
+        {% endfor %}
+    
+    {% endif %}
+
 {% else %}
         <p>
             Usted no ha iniciado Sesión

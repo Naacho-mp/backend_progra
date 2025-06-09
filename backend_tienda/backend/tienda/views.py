@@ -132,6 +132,7 @@ def agregar_categoria(request):
 
         if categoria_form.is_valid():
             categoria_form.save()
+            messages.success(request, "¡Categoria agregada Exitosamente!")
             return redirect('mostrar_categorias')
 
     else:
@@ -149,6 +150,7 @@ def actualizar_categoria(request, categoria_id):
 
         if categoria_form.is_valid():
             categoria_form.save()
+            messages.success(request, "¡Categoria actualizada Exitosamente!")
             return redirect('mostrar_categorias')
 
     else:

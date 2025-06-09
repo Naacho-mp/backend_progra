@@ -25,6 +25,19 @@
                 </div>
             </form>
         </div>
+
+    <!-- Alertas excepciones -->
+    {% if messages %}
+    
+        {% for message in messages %}
+        <script>
+            alert("{{ message|escapejs }}");
+        </script>
+        {% endfor %}
+    
+    {% endif %}
+
+
     {% else %}
         <div class="session-warning">
             <p>Usted no ha iniciado sesión.</p>
