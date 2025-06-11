@@ -61,7 +61,7 @@ def eliminar_del_carrito(request, producto_id):
         del carrito[str(producto_id)]
 
     request.session['carrito'] = carrito
-    return redirect('ver_producto', producto_id=producto_id)
+    return redirect('ver_carrito')
 
 
 def pagado(request):

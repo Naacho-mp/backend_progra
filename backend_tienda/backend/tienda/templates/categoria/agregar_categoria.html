@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Categoria</title>
-    <link rel="stylesheet" href="{% static 'css/styleAgregarProducto.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/styleAgregarCategoria.css' %}">
+    
 </head>
 {% if user.is_authenticated %}
     <body   class="container mt-4 ">
@@ -15,6 +16,7 @@
         </div>
 
         <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
             <table>
                 {{categoria_form}}
             </table>
@@ -36,11 +38,12 @@
     {% endif %}
 
 {% else %}
-        <p>
-            Usted no ha iniciado Sesión
-            </br>
-            <a href = "{% url 'login' %}">Iniciar Sesión</a>
-        </p>
+       <div class="d-flex justify-content-center align-items-center vh-100 text-center">
+            <div>
+                Usted no ha iniciado Sesión<br>
+                <a href="{% url 'login' %}">Iniciar Sesión</a>
+            </div>
+        </div>
 
     {% endif %}
 </html>

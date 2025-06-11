@@ -15,7 +15,6 @@ body {
     background: #dfdfdf;
 }
 
-
 .form-box {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -32,7 +31,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-
 .form-header {
     text-align: center;
     margin: 20px 0 40px 0;
@@ -43,7 +41,6 @@ body {
     font-size: 30px;
     font-weight: 600;
 }
-
 
 form p {
     margin-bottom: 15px;
@@ -69,7 +66,6 @@ select {
     box-sizing: border-box;
 }
 
-
 textarea {
     height: 100px;
     padding-top: 15px;
@@ -85,12 +81,10 @@ select:focus {
     width: 105%;
 }
 
-
 ::placeholder {
     font-weight: 500;
     color: #222;
 }
-
 
 .input-submit {
     position: relative;
@@ -121,4 +115,13 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.session-warning {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }

@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Categoria</title>
+    <title>Actualizar Categoría</title>
+    <link rel="stylesheet" href="{% static 'css/styleActualizarCategoria.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
-{% if user.is_authenticated %}
-    <body>
-        <h1>Actualizar Categoria</h1>
 
-        <form method="POST" enctype="multipart/form-data">
-            <table>
-                {{categoria_form}}
-            </table>
-            <button type="submit">Enviar</button>
-            {% csrf_token %}
-        </form>    
-    </body>
-{% else %}
-        <p>
-            Usted no ha iniciado Sesión
-            </br>
-            <a href = "{% url 'login' %}">Iniciar Sesión</a>
-        </p>
+<body>
+    {% if user.is_authenticated %}
+        <div class="form-box">
+            <div class="form-header">
+                <header>Actualizar Categoría</header>
+            </div>
 
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ categoria_form.as_p }}
+
+                <div class="input-submit">
+                    <button type="submit" class="submit-btn">Actualizar</button>
+                </div>
+            </form>
+        </div>
+
+    <!-- Alertas excepciones -->
+    {% if messages %}
+    
+        {% for message in messages %}
+        <script>
+            alert("{{ message|escapejs }}");
+        </script>
+        {% endfor %}
+    
     {% endif %}
+
+
+    {% else %}
+        <div class="session-warning">
+            <p>Usted no ha iniciado sesión.</p>
+            <br>
+            <a href="{% url 'login' %}">Iniciar Sesión</a>
+        </div>
+    {% endif %}
+</body>
 </html>

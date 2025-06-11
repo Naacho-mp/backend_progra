@@ -139,3 +139,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/accounts/login/'
 
 LOGIN_REDIRECT_URL = '/mostrar_productos/'
+
+LANGUAGE_CODE = 'es-es'
+USE_L10N = True
