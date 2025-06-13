@@ -59,7 +59,10 @@
     <a href="{% url 'pagado' %}" class="btn btn-secondary mt-3">Proceder al pago</a>
 </body>
 {% else %}
-    <div class="alert alert-warning">Debes iniciar sesión para ver tu carrito.</div>
-    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+    <p style="text-align: center; margin-top: 50px;">
+        Usted no ha iniciado Sesión
+        </br>
+        <a href = "{% url 'login' %}">Iniciar Sesión</a>
+    </p>
 {% endif %}
 </html>

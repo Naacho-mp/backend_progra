@@ -39,11 +39,11 @@
 
 
     {% else %}
-        <div class="session-warning">
-            <p>Usted no ha iniciado sesión.</p>
-            <br>
-            <a href="{% url 'login' %}">Iniciar Sesión</a>
-        </div>
+    <p style="text-align: center; margin-top: 50px;">
+        Usted no ha iniciado Sesión
+        </br>
+        <a href = "{% url 'login' %}">Iniciar Sesión</a>
+    </p>
     {% endif %}
 </body>
 </html>

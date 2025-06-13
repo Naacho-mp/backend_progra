@@ -38,12 +38,11 @@
     {% endif %}
 
 {% else %}
-       <div class="d-flex justify-content-center align-items-center vh-100 text-center">
-            <div>
-                Usted no ha iniciado Sesión<br>
-                <a href="{% url 'login' %}">Iniciar Sesión</a>
-            </div>
-        </div>
+    <p style="text-align: center; margin-top: 50px;">
+        Usted no ha iniciado Sesión
+        </br>
+        <a href = "{% url 'login' %}">Iniciar Sesión</a>
+    </p>
 
     {% endif %}
 </html>
