@@ -18,8 +18,8 @@ body {
 .register-box {
     display: flex;
     flex-direction: column;
-    width: 600px;  /* ⬅️ antes 360px */
-    padding: 40px 50px;  /* ⬅️ más horizontal */
+    width: 600px;  
+    padding: 40px 50px;  
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);

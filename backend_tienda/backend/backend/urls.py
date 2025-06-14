@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tienda.views import *
-from carrito.views import *
-from usuario.views import *
+from tienda.views import mostrar_productos, ver_producto, agregar_producto, actualizar_producto, eliminar_producto, productos_por_categoria, mostrar_categorias, agregar_categoria,actualizar_categoria, eliminar_categoria
+from carrito.views import agregar_al_carrito, ver_carrito, eliminar_del_carrito, pagado, boleta
+from usuario.views import agregar_usuario, logout_view
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic.base import RedirectView
