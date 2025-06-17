@@ -14,7 +14,7 @@ una relacion entre ellos, y finalmente para el caso del carrito de compras se ha
 
 3.- Crea tu Schema en tu Base de datos
 
-3.- Crear archivo .env en la raiz del Proyecto con sus credenciales de la BD:
+4.- Crear archivo .env en la raiz del Proyecto con sus credenciales de la BD:
 
     - DB_NAME = tienda_online
     - DB_USER = tu_user
@@ -22,6 +22,8 @@ una relacion entre ellos, y finalmente para el caso del carrito de compras se ha
     - DB_HOST = localhost
     - DB_PORT = 3306
 
-4.- Hacer las migraciones del proyecto mediante un "Python manage.py migrate"
+5.- Hacer las migraciones del proyecto mediante un "Python manage.py migrate"
 
-5.- Correr el Proyecto con "Python manage.py runserver"
+6.- Crea un superuser para el proyecto con la instrucción "python manage.py createsuperuser" 
+
+7.- Correr el Proyecto con "Python manage.py runserver"
